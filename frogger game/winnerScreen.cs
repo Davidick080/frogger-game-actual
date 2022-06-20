@@ -16,5 +16,17 @@ namespace frogger_game
         {
             InitializeComponent();
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void rMainMenuButton_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeScreen(this, new mainMenu());
+
+        }
     }
 }
+
