@@ -15,6 +15,7 @@ namespace frogger_game
     {
         // builds the frog object and car object 
         frogclass frog;
+        carClass car;
 
         public Size screenSize;
 
@@ -49,8 +50,8 @@ namespace frogger_game
             int startingFrogLocationy = 490;
 
             frog = new frogclass(startingFrogLocationx, startingFrogLocationy);
-
-            carList = new carClass();
+            car = new carClass();
+           // carList = new carClass();
         }
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
