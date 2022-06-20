@@ -42,6 +42,7 @@
             this.difficultyButton.TabIndex = 0;
             this.difficultyButton.Text = "Start";
             this.difficultyButton.UseVisualStyleBackColor = true;
+            this.difficultyButton.Click += new System.EventHandler(this.difficultyButton_Click);
             // 
             // tutorialButton
             // 
@@ -51,6 +52,7 @@
             this.tutorialButton.TabIndex = 1;
             this.tutorialButton.Text = "Tutorial";
             this.tutorialButton.UseVisualStyleBackColor = true;
+            this.tutorialButton.Click += new System.EventHandler(this.tutorialButton_Click);
             // 
             // exitButton1
             // 
@@ -70,7 +72,7 @@
             this.menuFroggerLogo.Size = new System.Drawing.Size(486, 69);
             this.menuFroggerLogo.TabIndex = 3;
             this.menuFroggerLogo.Text = "Frogger main menu";
-            this.menuFroggerLogo.Click += new System.EventHandler(this.menuFroggerLogo_Click);
+            
             // 
             // mainMenu
             // 

@@ -23,8 +23,8 @@ namespace frogger_game
         bool leftArrowDown = false;
         bool rightArrowDown = false;
         // ints for lives and timer 
-        int time;
-        int lives; 
+        public int time;
+        public static int lives = 3;
         // builds the list for the car class 
         List<carClass>carList = new List<carClass>();
         //random generator

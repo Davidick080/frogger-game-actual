@@ -17,9 +17,14 @@ namespace frogger_game
             InitializeComponent();
         }
 
-        private void menuFroggerLogo_Click(object sender, EventArgs e)
+        private void difficultyButton_Click(object sender, EventArgs e)
         {
+            Form1.ChangeScreen(this, new difficultyScreen());
+        }
 
+        private void tutorialButton_Click(object sender, EventArgs e)
+        {
+            Form1.ChangeScreen(this, new tutorialScreen());
         }
     }
 }

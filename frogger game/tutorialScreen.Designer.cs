@@ -112,7 +112,7 @@
             this.button1.Text = "main menu";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
+         
             // 
             // tutorialScreen
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.label1);
             this.Name = "tutorialScreen";
             this.Size = new System.Drawing.Size(903, 510);
-            this.Load += new System.EventHandler(this.tutorialScreen_Load);
+           
             this.ResumeLayout(false);
 
         }

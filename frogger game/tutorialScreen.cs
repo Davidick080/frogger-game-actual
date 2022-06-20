@@ -17,19 +17,11 @@ namespace frogger_game
             InitializeComponent();
         }
 
-        private void tutorialScreen_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Form1.ChangeScreen(this, new mainMenu());
         }
     }
 }

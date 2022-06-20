@@ -56,6 +56,7 @@
             this.easyButton.TabIndex = 1;
             this.easyButton.Text = "Easy ";
             this.easyButton.UseVisualStyleBackColor = true;
+            this.easyButton.Click += new System.EventHandler(this.easyButton_Click);
             // 
             // mediumButton
             // 
@@ -65,6 +66,7 @@
             this.mediumButton.TabIndex = 2;
             this.mediumButton.Text = "Medium";
             this.mediumButton.UseVisualStyleBackColor = true;
+            this.mediumButton.Click += new System.EventHandler(this.mediumButton_Click);
             // 
             // hardButton
             // 
@@ -74,6 +76,7 @@
             this.hardButton.TabIndex = 3;
             this.hardButton.Text = "Hard";
             this.hardButton.UseVisualStyleBackColor = true;
+            this.hardButton.Click += new System.EventHandler(this.hardButton_Click);
             // 
             // extremeHardButton
             // 
@@ -83,6 +86,7 @@
             this.extremeHardButton.TabIndex = 4;
             this.extremeHardButton.Text = "True frog mode";
             this.extremeHardButton.UseVisualStyleBackColor = true;
+            this.extremeHardButton.Click += new System.EventHandler(this.extremeHardButton_Click);
             // 
             // mainMenuButton
             // 

@@ -15,7 +15,7 @@ namespace frogger_game
         public Form1()
         {
             InitializeComponent();
-            ChangeScreen(this, new gameScreen());
+            ChangeScreen(this, new mainMenu());
         }
         public static void ChangeScreen(object sender, UserControl next)
 

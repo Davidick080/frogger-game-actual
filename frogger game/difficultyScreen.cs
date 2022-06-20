@@ -16,5 +16,28 @@ namespace frogger_game
         {
             InitializeComponent();
         }
+
+        private void easyButton_Click(object sender, EventArgs e)
+        {
+           gameScreen.lives = 3;
+           Form1.ChangeScreen(this, new gameScreen());
+        }
+
+        private void mediumButton_Click(object sender, EventArgs e)
+        {
+            gameScreen.lives = 2;
+            Form1.ChangeScreen(this, new gameScreen());
+        }
+
+        private void hardButton_Click(object sender, EventArgs e)
+        {
+            gameScreen.lives = 1;
+            Form1.ChangeScreen(this, new gameScreen());
+        }
+
+        private void extremeHardButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
