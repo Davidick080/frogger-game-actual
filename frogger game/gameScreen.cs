@@ -18,7 +18,9 @@ namespace frogger_game
         carClass car;
 
         public Size screenSize;
-
+        //
+      public int x = 0;
+      public int y = 300;
         //sets keys to false when game screen is first active 
         bool upArrowDown = false;
         bool downArrowDown = false;
@@ -48,10 +50,7 @@ namespace frogger_game
             //sets the starting cordinates for the frog 
             int startingFrogLocationx = 390;
             int startingFrogLocationy = 490;
-
-            int x = 0;
-            int y = 300;
-
+            //creates the game objects
             frog = new frogclass(startingFrogLocationx, startingFrogLocationy);
             car = new carClass(x, y, 20, 30);
             carList.Add(car);
@@ -63,7 +62,7 @@ namespace frogger_game
             livesLabel.Text = $"{lives}";
             // draws the frog
             e.Graphics.FillRectangle(Brushes.GreenYellow, frog.x, frog.y, frog.width, frog.height);
-            //draws the car 
+            //draws the car line
             foreach (carClass car in carList)
             {
                 e.Graphics.FillEllipse(Brushes.Tomato, car.x, car.y, car.width, car.height);
@@ -111,9 +110,11 @@ namespace frogger_game
         }
         private void gameEngine_Tick(object sender, EventArgs e)
         {
-            int x = 1;
+        foreach(carClass car in carList)
+            {
+                car.x++;
+            }
             carCoolD++;
-            car.x++;
             time++;
             if (leftArrowDown == true)
             {
@@ -135,10 +136,8 @@ namespace frogger_game
                 frog.Move("down", screenSize);
             }
 
-            if (carCoolD==900)
+            if (carCoolD==100)
             {
-              
-                int y = 300;
                 car = new carClass(x, y, 20, 30);
                 carList.Add(car);
                 carCoolD = 0;
@@ -146,7 +145,7 @@ namespace frogger_game
             }
             if (car.x == 900)
             {
-             //   car.x = 0;
+             car.x = 0;
             }
             if (frog.y == 0 || lives == 0)
             {
