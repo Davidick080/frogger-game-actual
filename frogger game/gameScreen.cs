@@ -24,7 +24,8 @@ namespace frogger_game
         bool downArrowDown = false;
         bool leftArrowDown = false;
         bool rightArrowDown = false;
-        // ints for lives and timer 
+        // ints for lives and timer and car spawning counter
+        public int carCoolD;
         public int time;
         public static int lives = 3;
         // builds the list for the car class 
@@ -44,14 +45,17 @@ namespace frogger_game
             //starts game engine 
             gameEngine.Enabled = true;
 
-            time++;
             //sets the starting cordinates for the frog 
             int startingFrogLocationx = 390;
             int startingFrogLocationy = 490;
 
+            int x = 0;
+            int y = 300;
+
             frog = new frogclass(startingFrogLocationx, startingFrogLocationy);
-            car = new carClass();
-           // carList = new carClass();
+            car = new carClass(x, y, 20, 30);
+            carList.Add(car);
+
         }
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
@@ -59,10 +63,11 @@ namespace frogger_game
             livesLabel.Text = $"{lives}";
             // draws the frog
             e.Graphics.FillRectangle(Brushes.GreenYellow, frog.x, frog.y, frog.width, frog.height);
-            //       foreach (carClass car in carList)
-            //  {
-            e.Graphics.FillEllipse(Brushes.Tomato, carList.x, carList.y, carList.width, carList.height) ;
-         //   }
+            //draws the car 
+            foreach (carClass car in carList)
+            {
+                e.Graphics.FillEllipse(Brushes.Tomato, car.x, car.y, car.width, car.height);
+            }
 
 
         }
@@ -106,6 +111,9 @@ namespace frogger_game
         }
         private void gameEngine_Tick(object sender, EventArgs e)
         {
+            int x = 1;
+            carCoolD++;
+            car.x++;
             time++;
             if (leftArrowDown == true)
             {
@@ -127,19 +135,32 @@ namespace frogger_game
                 frog.Move("down", screenSize);
             }
 
+            if (carCoolD==900)
+            {
+              
+                int y = 300;
+                car = new carClass(x, y, 20, 30);
+                carList.Add(car);
+                carCoolD = 0;
+                
+            }
+            if (car.x == 900)
+            {
+             //   car.x = 0;
+            }
             if (frog.y == 0 || lives == 0)
             {
 
                 gameEngine.Enabled = false;
-               
+
                 XmlWriter writter = XmlWriter.Create("Resources/highScoreStore.xml", null);
                 writter.WriteStartElement("time");
-               
-               Form1.ChangeScreen(this, new winnerScreen());
-               
+
+                Form1.ChangeScreen(this, new winnerScreen());
+
 
             }
-           
+
 
             Refresh();
 
