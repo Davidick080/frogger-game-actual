@@ -31,6 +31,7 @@
             this.winnerLabel = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
             this.rMainMenuButton = new System.Windows.Forms.Button();
+            this.xmlReader = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // winnerLabel
@@ -63,10 +64,20 @@
             this.rMainMenuButton.UseVisualStyleBackColor = true;
             this.rMainMenuButton.Click += new System.EventHandler(this.rMainMenuButton_Click);
             // 
+            // xmlReader
+            // 
+            this.xmlReader.AutoSize = true;
+            this.xmlReader.Location = new System.Drawing.Point(239, 163);
+            this.xmlReader.Name = "xmlReader";
+            this.xmlReader.Size = new System.Drawing.Size(99, 13);
+            this.xmlReader.TabIndex = 3;
+            this.xmlReader.Text = "your time is to cross";
+            // 
             // winnerScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.xmlReader);
             this.Controls.Add(this.rMainMenuButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.winnerLabel);
@@ -82,5 +93,6 @@
         private System.Windows.Forms.Label winnerLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button rMainMenuButton;
+        private System.Windows.Forms.Label xmlReader;
     }
 }

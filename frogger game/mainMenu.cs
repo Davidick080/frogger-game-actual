@@ -26,5 +26,10 @@ namespace frogger_game
         {
             Form1.ChangeScreen(this, new tutorialScreen());
         }
+
+        private void exitButton1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

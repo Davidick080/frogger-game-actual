@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace frogger_game
 {
@@ -14,7 +15,7 @@ namespace frogger_game
     {
         // builds the frog object and car object 
         frogclass frog;
-     
+
         public Size screenSize;
 
         //sets keys to false when game screen is first active 
@@ -26,7 +27,7 @@ namespace frogger_game
         public int time;
         public static int lives = 3;
         // builds the list for the car class 
-        List<carClass>carList = new List<carClass>();
+        List<carClass> carList = new List<carClass>();
         //random generator
         Random randGen = new Random();
         //borders 
@@ -39,17 +40,17 @@ namespace frogger_game
         }
         public void InitializeGame()
         {
-          //starts game engine 
+            //starts game engine 
             gameEngine.Enabled = true;
-            
-            time ++ ;
-          //sets the starting cordinates for the frog 
-            int startingFrogLocationx =390;
-            int startingFrogLocationy =490 ;
-          
-            frog = new frogclass(startingFrogLocationx,startingFrogLocationy);
-            
-         //   car = new carClass();
+
+            time++;
+            //sets the starting cordinates for the frog 
+            int startingFrogLocationx = 390;
+            int startingFrogLocationy = 490;
+
+            frog = new frogclass(startingFrogLocationx, startingFrogLocationy);
+
+            carList = new carClass();
         }
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
@@ -57,11 +58,11 @@ namespace frogger_game
             livesLabel.Text = $"{lives}";
             // draws the frog
             e.Graphics.FillRectangle(Brushes.GreenYellow, frog.x, frog.y, frog.width, frog.height);
-           foreach(carClass car in carList)
-           {
-                e.Graphics.FillEllipse(Brushes.Tomato,car.x,car.y,car.width,car.height);
-           }
-          
+            //       foreach (carClass car in carList)
+            //  {
+            e.Graphics.FillEllipse(Brushes.Tomato, carList.x, carList.y, carList.width, carList.height) ;
+         //   }
+
 
         }
 
@@ -104,7 +105,7 @@ namespace frogger_game
         }
         private void gameEngine_Tick(object sender, EventArgs e)
         {
-            time++;   
+            time++;
             if (leftArrowDown == true)
             {
                 frog.Move("left", screenSize);
@@ -124,24 +125,23 @@ namespace frogger_game
             {
                 frog.Move("down", screenSize);
             }
-            
-        //   foreach (carClass car in c)
-          //  {
 
-            //}
-         
+            if (frog.y == 0 || lives == 0)
+            {
+
+                gameEngine.Enabled = false;
+               
+                XmlWriter writter = XmlWriter.Create("Resources/highScoreStore.xml", null);
+                writter.WriteStartElement("time");
+               
+               Form1.ChangeScreen(this, new winnerScreen());
+               
+
+            }
+           
+
             Refresh();
 
-        }
-        public void gameEnder ()
-        {
-        if(frog.y>=0)
-            {
-                gameEngine.Enabled = false;
-                Form1.ChangeScreen(this, new winnerScreen());
-              
-              
-            }
         }
     }
 

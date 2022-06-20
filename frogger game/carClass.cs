@@ -13,7 +13,7 @@ namespace frogger_game
         public int height = 10;
         public int xSpeed, ySpeed;
         public int width = 15;
-        public int x, y;
+        public int x =1 , y=500;
 
         //random number generator for car width and height 
         
@@ -30,9 +30,9 @@ namespace frogger_game
 
 
             //check if car has reached ether edge of screen 
-            if (x > 0)
+            if (x>=910)
             {
-
+             
             }
         }
             public bool Collision(frogclass f)

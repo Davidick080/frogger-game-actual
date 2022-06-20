@@ -62,6 +62,7 @@
             this.exitButton1.TabIndex = 2;
             this.exitButton1.Text = "Exit";
             this.exitButton1.UseVisualStyleBackColor = true;
+            this.exitButton1.Click += new System.EventHandler(this.exitButton1_Click);
             // 
             // menuFroggerLogo
             // 
@@ -72,7 +73,6 @@
             this.menuFroggerLogo.Size = new System.Drawing.Size(486, 69);
             this.menuFroggerLogo.TabIndex = 3;
             this.menuFroggerLogo.Text = "Frogger main menu";
-            
             // 
             // mainMenu
             // 
