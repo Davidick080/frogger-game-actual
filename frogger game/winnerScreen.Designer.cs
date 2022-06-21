@@ -40,9 +40,9 @@
             this.winnerLabel.BackColor = System.Drawing.SystemColors.Control;
             this.winnerLabel.Location = new System.Drawing.Point(232, 130);
             this.winnerLabel.Name = "winnerLabel";
-            this.winnerLabel.Size = new System.Drawing.Size(43, 13);
+            this.winnerLabel.Size = new System.Drawing.Size(77, 13);
             this.winnerLabel.TabIndex = 0;
-            this.winnerLabel.Text = "you win";
+            this.winnerLabel.Text = "you win or lost ";
             // 
             // exitButton
             // 

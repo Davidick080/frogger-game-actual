@@ -15,6 +15,8 @@ namespace frogger_game
         public winnerScreen()
         {
             InitializeComponent();
+            xmlReader.Text = $"your time was {gameScreen.time}";
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)
